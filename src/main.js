@@ -1,12 +1,20 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
+import Vue from "vue";
+import App from "./App.vue";
+import router from "./router";
 
-Vue.config.productionTip = false
+import "./assets/css/style.scss";
+
+import VueAxios from "vue-axios";
+import axios from "axios";
+Vue.use(VueAxios, axios);
+
+import VueHtml2Canvas from "vue-html2canvas";
+Vue.use(VueHtml2Canvas);
+
+Vue.config.productionTip = false;
 
 new Vue({
   router,
-  store,
+
   render: h => h(App)
-}).$mount('#app')
+}).$mount("#app");

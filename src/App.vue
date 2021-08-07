@@ -1,32 +1,137 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div v-if="check">
+      <router-view />
     </div>
-    <router-view/>
+    <div
+      style="
+        display: flex;
+
+        height: 100%;
+
+        background-color: rgb(81, 45, 109);
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+      "
+      v-else
+    >
+      <svg
+        width="135"
+        height="140"
+        viewBox="0 0 135 140"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="#fff"
+      >
+        <rect y="10" width="15" height="120" rx="6">
+          <animate
+            attributeName="height"
+            begin="0.5s"
+            dur="1s"
+            values="120;110;100;90;80;70;60;50;40;140;120"
+            calcMode="linear"
+            repeatCount="indefinite"
+          />
+          <animate
+            attributeName="y"
+            begin="0.5s"
+            dur="1s"
+            values="10;15;20;25;30;35;40;45;50;0;10"
+            calcMode="linear"
+            repeatCount="indefinite"
+          />
+        </rect>
+        <rect x="30" y="10" width="15" height="120" rx="6">
+          <animate
+            attributeName="height"
+            begin="0.25s"
+            dur="1s"
+            values="120;110;100;90;80;70;60;50;40;140;120"
+            calcMode="linear"
+            repeatCount="indefinite"
+          />
+          <animate
+            attributeName="y"
+            begin="0.25s"
+            dur="1s"
+            values="10;15;20;25;30;35;40;45;50;0;10"
+            calcMode="linear"
+            repeatCount="indefinite"
+          />
+        </rect>
+        <rect x="60" width="15" height="140" rx="6">
+          <animate
+            attributeName="height"
+            begin="0s"
+            dur="1s"
+            values="120;110;100;90;80;70;60;50;40;140;120"
+            calcMode="linear"
+            repeatCount="indefinite"
+          />
+          <animate
+            attributeName="y"
+            begin="0s"
+            dur="1s"
+            values="10;15;20;25;30;35;40;45;50;0;10"
+            calcMode="linear"
+            repeatCount="indefinite"
+          />
+        </rect>
+        <rect x="90" y="10" width="15" height="120" rx="6">
+          <animate
+            attributeName="height"
+            begin="0.25s"
+            dur="1s"
+            values="120;110;100;90;80;70;60;50;40;140;120"
+            calcMode="linear"
+            repeatCount="indefinite"
+          />
+          <animate
+            attributeName="y"
+            begin="0.25s"
+            dur="1s"
+            values="10;15;20;25;30;35;40;45;50;0;10"
+            calcMode="linear"
+            repeatCount="indefinite"
+          />
+        </rect>
+        <rect x="120" y="10" width="15" height="120" rx="6">
+          <animate
+            attributeName="height"
+            begin="0.5s"
+            dur="1s"
+            values="120;110;100;90;80;70;60;50;40;140;120"
+            calcMode="linear"
+            repeatCount="indefinite"
+          />
+          <animate
+            attributeName="y"
+            begin="0.5s"
+            dur="1s"
+            values="10;15;20;25;30;35;40;45;50;0;10"
+            calcMode="linear"
+            repeatCount="indefinite"
+          />
+        </rect>
+      </svg>
+    </div>
   </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
 </style>
+<script>
+export default {
+  data() {
+    return {
+      check: false,
+    };
+  },
+
+  mounted() {
+    setTimeout(() => {
+      this.check = true;
+    }, 2000);
+  },
+};
+</script>
